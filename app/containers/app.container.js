@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../components/header.component';
+import Controls from './controls.container';
 
 class AppContainer extends React.Component {
 	constructor(props) {
@@ -19,8 +20,14 @@ class AppContainer extends React.Component {
 			currentPreset: '',
 			presets: [
 				'Ambient'
-			]
+			],
+			wheelWidth: 0,
+			wheelHeight: 0
 		}
+	}
+
+	setColor() {
+
 	}
 
 	sendColor(device, color) {
@@ -40,6 +47,7 @@ class AppContainer extends React.Component {
 					primaryColor={this.state.primaryColor}
 					secondaryColor={this.state.secondaryColor}
 				/>
+				<Controls />
 			</div>
 		)
 	}

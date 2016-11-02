@@ -11,7 +11,7 @@ class Header extends React.Component {
 				<div className="left">{this.props.name}</div>
 				<div className="right">v-{this.props.version}</div>
 			</div>
-		)
+		);
 	}
 }
 
