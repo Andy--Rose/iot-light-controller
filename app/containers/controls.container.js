@@ -79,7 +79,9 @@ class Controls extends React.Component{
 						/>
 					</Col>
 					<Col className="contolscol" sm={3} md={3} lg={3}>
-						<Brightness />
+						<Brightness 
+							selectedColor="white"
+						/>
 					</Col>
 				</Row>
 			</Grid>

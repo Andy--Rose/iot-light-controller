@@ -103,3 +103,12 @@ body {
     text-transform: uppercase;
     width: 75px;
 }
+
+.brightness {
+	height: 470px;
+}
+
+.slide {
+	position: absolute;
+	height: 470px;
+}
