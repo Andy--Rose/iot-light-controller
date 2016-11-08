@@ -1,8 +1,11 @@
+// https://github.com/DavidDurman/FlexiColorPicker/blob/master/examples/showcase.html
+
 import React from 'react';
 
 class Colors extends React.Component {
 	componentDidMount() {
 		var previewID = this.props.previewID;
+		var handleColorChangeFunc = this.props.handleColorChange;
 		ColorPicker.fixIndicators(
 			document.getElementById('slider-indicator'),
 			document.getElementById('picker-indicator'));
@@ -15,7 +18,7 @@ class Colors extends React.Component {
 					document.getElementById('picker-indicator'),
 					sliderCoordinate, pickerCoordinate
 				);
-				document.getElementById(previewID).style.backgroundColor = hex;
+				handleColorChangeFunc(hex);
 			}
 		);
 	}

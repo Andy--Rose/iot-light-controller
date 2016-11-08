@@ -2,6 +2,8 @@ import React from 'react';
 
 import Header from '../components/header.component';
 import Controls from './controls.container';
+import Devices from '../components/devices.component';
+import Presets from '../components/presets.component';
 
 class AppContainer extends React.Component {
 	constructor(props) {
@@ -9,21 +11,40 @@ class AppContainer extends React.Component {
 		this.state = {
 			appName: 'IoT Light Controller',
 			appVersion: '1.0.0',
+			device: "Couch",
+			preset: "AmbientCycle",
+			color: "#fff",
+			mode: "None",
 			primaryColor: 'rgb(0, 0, 200)',
 			secondaryColor: 'rgb(255, 255, 255)',
-			wheelPosition: 224,
-			brightness: 100,
-			currentDevice: 'Living Room',
-			devices: [
-				'Living Room'
-			],
-			currentPreset: '',
-			presets: [
-				'Ambient'
-			],
-			wheelWidth: 0,
-			wheelHeight: 0
+			colorPreviewArea: "setColorControl"
 		}
+	}
+
+	handleDeviceChange(e) {
+		this.setState(
+			{device: e.target.value}
+		)
+	}
+
+	handlePresetChange(e) {
+		this.setState(
+			{
+				preset: e.target.value,
+				mode: "preset"
+			}
+		)
+	}
+
+	handleColorChange(selectedColor) {
+		this.setState(
+			{
+				color: selectedColor,
+				mode: "color"
+			}
+		)
+		var id = this.state.colorPreviewArea;
+		document.getElementById(id).style.backgroundColor = selectedColor;
 	}
 
 	sendColor(device, color) {
@@ -43,7 +64,21 @@ class AppContainer extends React.Component {
 					primaryColor={this.state.primaryColor}
 					secondaryColor={this.state.secondaryColor}
 				/>
-				<Controls />
+				<Controls 
+					device={this.state.device}
+					preset={this.state.preset}
+					color={this.state.color}
+					mode={this.state.mode}
+					handleColorChange={this.handleColorChange.bind(this)}
+				/>
+				<Devices
+					device={this.state.device}
+					handleDeviceChange={this.handleDeviceChange.bind(this)}
+				/>
+				<Presets
+					preset={this.state.preset}
+					handlePresetChange={this.handlePresetChange.bind(this)}
+				/>
 			</div>
 		)
 	}
