@@ -26,10 +26,6 @@ class AppContainer extends React.Component {
 		}
 	}
 
-	setColor() {
-
-	}
-
 	sendColor(device, color) {
 
 	}

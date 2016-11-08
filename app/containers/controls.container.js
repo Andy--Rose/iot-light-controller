@@ -20,7 +20,8 @@ class Controls extends React.Component{
 		super(props);
 		this.state = {
 			wheelImgWidth: 0,
-			wheelImgHeight: 0
+			wheelImgHeight: 0,
+			colorPreviewArea: "setColorControl"
 		}
 	}
 
@@ -139,7 +140,9 @@ class Controls extends React.Component{
 						<Buttons />		
 					</Col>
 					<Col className="colorscol" sm={9} md={9} lg={9}>
-						<Colors/>
+						<Colors 
+							previewID={this.state.colorPreviewArea}
+						/>
 					</Col>
 				</Row>
 			</Grid>

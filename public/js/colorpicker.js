@@ -3,7 +3,6 @@
  * Copyright © 2011 David Durman, All rights reserved.
  */
 (function(window, document, undefined) {
-
     var type = (window.SVGAngle || document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1") ? "SVG" : "VML"),
         picker, slide, hueOffset = 15, svgNS = 'http://www.w3.org/2000/svg';
 
