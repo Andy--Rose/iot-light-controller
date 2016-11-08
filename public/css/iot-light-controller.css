@@ -104,11 +104,41 @@ body {
     width: 75px;
 }
 
-.brightness {
-	height: 470px;
+#colors {
+	width: 100%;
+	min-height: 500px;
+}
+#picker, #picker > svg,
+#slider, #slider > svg{
+    min-height: 500px;
+}
+#picker-wrapper {
+    width: 55%;
+    min-height: 500px;
+    position: relative;
+    float: left;
+    margin-left: 10%;
+    border: 10px inset lightgrey;
+    padding-bottom: -5px;
 }
 
-.slide {
-	position: absolute;
-	height: 470px;
+#slider-wrapper {
+    width: 20%;
+    min-height: 100%;
+    position: relative;
+    float:right;
+    margin-right: 10%;
+    border: 10px inset lightgrey;
+}
+#picker-indicator {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    border: 2px solid white;
+}
+#slider-indicator {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    border: 2px solid black;
 }

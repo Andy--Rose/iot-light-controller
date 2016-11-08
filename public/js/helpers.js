@@ -24,3 +24,33 @@ export function GetPosition(el) {
 	y: yPos
 	};
 }
+
+export function AddEventListener(element, event, listener) {
+    if (element.attachEvent) {
+        
+        element.attachEvent('on' + event, listener);
+        
+    } else if (element.addEventListener) {
+
+        element.addEventListener(event, listener, false);
+    }
+}
+
+/**
+* Enable dragging on a Canvas object
+*/
+export function EnableDragging(ctx, element, listener) {
+    
+    var mousedown = false;
+
+    addEventListener(element, 'mousedown', function(evt) { mousedown = true;  });
+    addEventListener(element, 'mouseup',   function(evt) { mousedown = false;  });
+    addEventListener(element, 'mouseout',  function(evt) { mousedown = false;  });
+    addEventListener(element, 'mousemove', function(evt) {
+
+        if (mousedown) {
+            
+            listener(evt);
+        }
+    });
+}
