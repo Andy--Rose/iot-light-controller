@@ -34,6 +34,8 @@ class AppContainer extends React.Component {
 				mode: "preset"
 			}
 		)
+		var id = this.state.colorPreviewArea;
+		document.getElementById(id).style.backgroundColor = "white";
 	}
 
 	handleColorChange(selectedColor) {

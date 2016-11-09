@@ -1,6 +1,8 @@
 import React from 'react';
 import DeviceFile from '../../public/conf/devices.json'
 import FormControl from 'react-bootstrap/lib/FormControl';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 
 class Devices extends React.Component {
 	constructor(props) {
@@ -12,13 +14,16 @@ class Devices extends React.Component {
 
 	render() {
 		return (
-			<select id="devices" type="dropdown" value={this.props.device} onChange={this.props.handleDeviceChange}>
-				{this.state.devices.map(function(device) {
-					return (
-						<option value={device} key={device}>{device}</option>
-					);
-				})}
-			</select>
+			<FormGroup id="devicesContainer" controlId="formDevices">
+				<ControlLabel>Devices</ControlLabel>
+				<FormControl componentClass="select" controlId="devices" value={this.props.device} onChange={this.props.handleDeviceChange}>
+					{this.state.devices.map(function(device) {
+						return (
+							<option value={device} key={device}>{device}</option>
+						);
+					})}
+				</FormControl>
+			</FormGroup>
 		)
 	}
 }

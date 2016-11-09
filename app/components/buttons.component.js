@@ -1,3 +1,5 @@
+// TODO: Stylize text and add hover and press effects
+
 import React from 'react'
 
 import Grid from '../../node_modules/react-bootstrap/lib/Grid';
@@ -9,7 +11,7 @@ class Buttons extends React.Component {
 		if (this.props.mode === "color") {
 			return "Color";
 		} else if (this.props.mode === "preset") {
-			return "Preset " + this.props.preset; 
+			return this.props.preset; 
 		} else {
 			return "Unknown mode";
 		}
@@ -18,10 +20,17 @@ class Buttons extends React.Component {
 	render() {
 		return (
 			<div className="buttons">
-				<div id="iOControl" className="control ioControl">I/O</div>
+				<div id="iOControl" className="control ioControl">
+					<p className="button-text-top">
+						{this.props.device}
+					</p>
+				</div>
 				<div id="setColorControl" className="control setControl">
-					<p>
-						Set {this.props.device} with {this.getModeSetting()}
+					<p className="button-text-top">
+						{this.props.device}
+					</p>
+					<p className="button-text-bottom">
+						{this.getModeSetting()}
 					</p>
 				</div>
 			</div>

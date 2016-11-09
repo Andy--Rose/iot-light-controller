@@ -15,7 +15,7 @@ class Devices extends React.Component {
 	render() {
 		return (
 			<FormGroup id="presetsContainer" controlId="formPresets">
-				<ControlLabel>Device</ControlLabel>
+				<ControlLabel>Presets</ControlLabel>
 				<FormControl componentClass="select" controlId="presets" value={this.props.preset} onChange={this.props.handlePresetChange}>
 					{this.state.presets.map(function(preset) {
 						return (
