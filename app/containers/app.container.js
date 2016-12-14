@@ -9,7 +9,7 @@ class AppContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			appName: 'IoT Light Controller',
+			appName: 'IoT Light Controller (Unrefined Skeleton)',
 			appVersion: '1.0.0',
 			device: "Couch",
 			preset: "AmbientCycle",
